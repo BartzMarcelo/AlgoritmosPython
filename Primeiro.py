@@ -1,9 +1,8 @@
 # Isto é um comentário.
 '''também é comentário ''' # Apostofre - aspas simples.
 """ Também é comentário""" # Aspas duplas.
- 
+print("Aula: 04/12/2025") 
 print("Tipos de Dados e Variáveis")
-
 x = 10 # Atribuição
 y = 7
 z = x+ y
@@ -48,7 +47,7 @@ print()
 x %= y 
 print(x)
 print()
-
+print("-----------------------------------------------------------------------")
 
 
 
