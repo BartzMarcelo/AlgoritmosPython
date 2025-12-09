@@ -73,3 +73,15 @@ print()
 p1 = "painel1"
 p2 = "painel"
 print(p1.isalpha())
+
+# isnumeric verifica se existe número dentro da "STRING".
+num = "Dois" 
+print(num.isnumeric())
+numero = '123'
+print(numero.isnumeric())
+# isspace verifica se astring tem apenas espaços
+num2 = '42 '
+print( num2.isspace())
+num3 = ' '
+print( num3.isspace())
+
