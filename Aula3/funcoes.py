@@ -79,7 +79,13 @@ print(p1.isalpha())
 
 
 print('')
-#
+#isnumeric verifica se a "STRING " contém némeros
+num = "Dois"
+print( num.isnumeric())
+
+numero = '123'
+print( numero.isnumeric())
+
 print('')
 print('')
 print('')
