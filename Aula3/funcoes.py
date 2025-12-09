@@ -29,3 +29,9 @@ print(math.floor(5.9))
 print( math.fabs(-5.4))
 # Calcular Fatorial
 print( math.factorial(5))
+# Retorna o resto da divisão com float
+print(math.fmod(5,4))
+# Trunca um número retornando o inteiro
+print( math.trunc(5.2))
+# Eleva o primeiro número ao segundo
+print ( math.pow(2,9))
