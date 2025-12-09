@@ -46,7 +46,7 @@ print( math.log(1000,10)) # Retorna o logaritmo de um número pelo outro
 print( math.log10(1000)) # Retorna o log 10 de um número 
 #help(print)
 grito = " Eu ESTOU GRITANDO!"
-print( grito.lower()) # Passa para caixa baixa9 normal)
+print( grito.lower()) # Passa para caixa baixa (normal)
 normal= " eu estou falando normalmente!"
 print(normal.upper())# Passa para caixa alta
 print(grito.capitalize()) # Somente a primeira letra maiúscula da frase
@@ -71,4 +71,6 @@ print(texto)
 print()
 # isalpha() - verifica se a string contém somente letras
 p1 = "painel1"
+p2 = "painel"
 print(p1.isalpha())
+print(p2.isalpha())
