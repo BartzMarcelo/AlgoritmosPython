@@ -85,3 +85,18 @@ print( num2.isspace())
 num3 = ' '
 print( num3.isspace())
 
+# Tipos Imutáveis
+print(int(3,14))
+
+# Operadores de Comparação
+# == -> igualdade
+# != -> diferença
+# < -> menor
+# > -> maior
+# >= -> maior ou igual
+# <= -> menor ou igual
+
+z = 2
+t = 5
+
+print( z == t)
