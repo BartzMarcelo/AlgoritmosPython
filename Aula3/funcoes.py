@@ -52,4 +52,23 @@ print(normal.upper())# Passa para caixa alta
 print(grito.capitalize()) # Somente a primeira letra maiúscula da frase
 troca =' essa É UMA strING emBARALHADA' 
 print( troca.swapcase()) # Inverte letra maiúscula para minúscula e vice-versa
-espacos = '-', '    espacoso    '
+espacos = '-', '    espacoso    ', '-'
+print(espacos)
+print('')
+print('')
+#.strip - remove os espaços em brancoem branco antes e depois da string
+print( '-', '  tirando  ' .strip(), '-')
+print('')
+# .rstrip - retira os espaços à direita
+print( '-', '  tirando  ' .rstrip(), '-')
+# .lstrip - retira os espaços à esquerda
+print( '-', '  tirando  ' .lstrip(), '-')
+
+#replace - substitui uma string por outra, mas no print
+texto = ' Um anel para todos governar, um anel para encontrar'
+print(texto.replace('anel', 'pulseira'))
+print(texto)
+print()
+# isalpha() - verifica se a string contém somente letras
+p1 = "painel1"
+print(p1.isalpha())
