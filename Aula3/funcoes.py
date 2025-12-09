@@ -72,3 +72,17 @@ print()
 # isalpha() - verifica se a string contém somente letras
 p1 = "painel1"
 print(p1.isalpha())
+
+
+
+
+
+
+print('')
+#
+print('')
+print('')
+print('')
+print('')
+print('')
+
