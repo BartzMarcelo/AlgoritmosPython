@@ -13,11 +13,20 @@ elif operacao == "-":
 elif operacao == "*":
     resultado=num1*num3
 elif operacao == "/":
+    if num3 != 0:
+        resultado = num1/num3
+    else:
+        print("ERRO: Divisão por zero não é permitida.")
+        resultado = "Indefinido"
     resultado=num1/num3
 elif operacao == "**":
     resultado=num1**num3
+else:
+    print("ERRO: Operação inválida. Por favor, use +, -, *, /, ou **.")
+    resultado = "Inválida" # Define o resultado como uma string de erro
 
 print('a.A equação é: ',num1,operacao,num3,"=",resultado )
 print("b. Onde o primeiro input foi ",num1,"o segundo foi", num3," e o terceiro ", operacao,".")
+print()
 
 
