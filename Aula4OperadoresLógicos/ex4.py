@@ -1,32 +1,33 @@
 
 
 
-num1 = float(input('Digite um número: '))
-num3 = float(input('Digite um número: '))
-operacao = input('Digite operação desejada: +, -, *, /, ** :') 
+import streamlit as st
 
+st.title("Calculadora Simples")
+
+num1 = st.number_input('Digite o primeiro número:', value=0.0)
+num2 = st.number_input('Digite o segundo número:', value=0.0)
+operacao = st.selectbox('Escolha a operação:', ['+', '-', '*', '/', '**'])
 
 if operacao == "+":
-    resultado=num1+num3
+    resultado = num1 + num2
 elif operacao == "-":
-    resultado=num1-num3
+    resultado = num1 - num2
 elif operacao == "*":
-    resultado=num1*num3
+    resultado = num1 * num2
 elif operacao == "/":
-    if num3 != 0:
-        resultado = num1/num3
+    if num2 != 0:
+        resultado = num1 / num2
     else:
-        print("ERRO: Divisão por zero não é permitida.")
+        st.error("ERRO: Divisão por zero não é permitida.")
         resultado = "Indefinido"
-    #resultado=num1/num3
 elif operacao == "**":
-    resultado=num1**num3
+    resultado = num1 ** num2
 else:
-    print("\nERRO: Operação inválida. Por favor, use +, -, *, /, ou **.")
-    resultado = "Inválida" # Define o resultado como uma string de erro
+    st.error("ERRO: Operação inválida.")
+    resultado = "Inválida"
 
-print('\na. A equação é: ',num1,operacao,num3,"=",resultado )
-print("\nb. Onde o primeiro input foi ",num1,"o segundo foi", num3," e o terceiro ", operacao,".")
-print()
+st.write(f"a. A equação é: {num1} {operacao} {num2} = {resultado}")
+st.write(f"b. Onde o primeiro input foi {num1}, o segundo foi {num2} e o terceiro {operacao}.")
 
 
