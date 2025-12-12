@@ -1,0 +1,46 @@
+Streamlit é um framework (estrutura) de código aberto em Python que permite a criação e compartilhamento de aplicativos web interativos (Data Apps) para visualização e interação com dados de forma extremamente simples e rápida.
+
+Ele é amplamente utilizado por cientistas de dados, analistas e desenvolvedores que desejam transformar scripts e análises de dados em um aplicativo web funcional, sem a necessidade de conhecimento avançado em tecnologias de frontend como HTML, CSS ou JavaScript.
+
+Principais Características e Usos
+Fácil e Rápido: Você pode criar um aplicativo funcional com poucas linhas de código, usando apenas Python.
+
+Puro Python: Toda a interface e a lógica são definidas em Python, facilitando a vida de quem já trabalha com a linguagem.
+
+Widgets Interativos: Oferece componentes de interface prontos (widgets) como sliders, caixas de seleção (checkboxes), botões e entradas de texto, permitindo que o usuário interaja dinamicamente com os dados e modelos.
+
+Visualização de Dados: Integra-se facilmente com bibliotecas populares de visualização de dados do Python, como Matplotlib, Seaborn e Plotly, permitindo a criação de gráficos e dashboards interativos.
+
+Aplicações de Data Science e Machine Learning: É ideal para:
+
+Prototipagem rápida de interfaces.
+
+Compartilhamento de dashboards interativos e resultados de análise.
+
+Criação de interfaces para testar modelos de Machine Learning e ajustar hiperparâmetros em tempo real.
+
+Compartilhamento Simplificado: Possui o Streamlit Community Cloud que facilita a hospedagem e o compartilhamento de seus aplicativos na web gratuitamente.
+
+Em resumo, o Streamlit retira a complexidade do desenvolvimento web, permitindo que o foco permaneça na lógica de dados e análise.
+
+Este vídeo detalha a criação de um aplicativo web interativo usando o Streamlit.
+
+Rodar Streamlit
+
+1. Abrir terminal do VS Code.
+2. Navegar até o diretório do arquivo(exemplo):
+cd "C:\Users\Bartz\Desktop\TecIA\AlgoritmosPython\Aula4  Operadores Lógicos"
+3. Rode o arquivo:
+python -m streamlit run app.py
+4. Para parar, Ctrl+C.
+
+MELHOR:
+
+python -m streamlit run "C:\Users\Bartz\Desktop\TecIA\AlgoritmosPython\Aula4OperadoresLógicos\app.py"
+
+python -m streamlit run "C:\Users\Bartz\Desktop\TecIA\AlgoritmosPython\Aula4OperadoresLógicos\Calculadora.py"
+
+
+
+
+
