@@ -1,0 +1,180 @@
+Exercícios para Entregar
+1. Faça um programa que leia três números e exiba o maior deles.
+
+2. Crie um algoritmo que verifique se o número digitado é positivo ou negativo e se é par ou ímpar. Se for ímpar, que informe se ele é múltiplo de 3, 5 ou 7.
+
+3. Crie um programa que peça a idade do usuário.
+	a. Se ele for menor de 16, avise que ele não pode votar ainda;
+	b. Se ele tiver entre 16 e 17 anos, avise que o voto é opcional;
+	c. Se ele tiver entre 18 e 65, avise que o voto é obrigatório;
+	d. Se ele tiver mais que 65 anos, avise que o voto é opcional;
+
+4. Crie uma calculadora. Seu programa deve ter 3 inputs. O primeiro pegará um número float, o segundo irá pegar a operação aritmética a ser realizada (adição, subtração, multiplicação, divisão e potência) e o terceiro input deve pegar o segundo número em formato float. Mostre o resultado da operação em um texto completo, como abaixo:
+	a. A equação é : 2 ** 6 = 64
+	b. Onde o primeiro input foi 2, o segundo input foi ** e o terceiro foi 6.
+	c. Avise o usuário caso a operação inserida seja inválida.
+	d. Se a operação for de divisão e o segundo número for 0, avise “Impossível dividir por zero”.
+
+5. Crie um algoritmo para determinar para onde alguém deve ir com base na sua idade. Abaixo está o critério que determina para onde ir:
+	a. se idade for menor que 3 -> vá para o Berçário
+	b. se idade for de 3 até 5 -> vá para a Educação Infantil na Série NX
+		i. a variação das séries (o X) vai do N1 até o N3
+	c. se idade for de 6 até 14 -> vá para o Ensino Fundamental no Ano X
+		i. a variação dos anos (o X) vai do 1º até o 9º
+	d. se idade for de 15 até 17 -> vá para o Ensino Médio no Ano X
+		i. a variação dos anos (o X) vai do 1º até o 3º
+	e. se idade for maior que 17 -> vá para a faculdade
+	f. Exemplo: se o usuário digitar 13, a saída deverá ser “Vá para o Ensino Fundamental no Ano 8”
+
+#############################################################
+
+''' 1. Faça um programa que leia três números e exiba o maior deles. '''
+
+n1 = int( input('Digite o primeiro número: '))
+n2 = int( input('Digite o segundo número: '))
+n3= int( input('Digite o terceiro número: '))
+
+# Inicializar a variável 'maior' com o primeiro valor
+maior = n1
+
+# Comparar com o segundo
+if n2 > maior:
+    maior = n2
+
+# Comparar com o terceiro
+if n3 > maior:
+    maior = n3
+
+print(f"\nO maior número digitado é: {maior}")
+############################################################
+
+
+
+''' 2. Crie um algoritmo que verifique se o número digitado é positivo ou negativo e se é par ou ímpar.
+# Se for ímpar, que informe se ele é múltiplo de 3, 5 ou 7. '''
+
+# Assumindo que o usuário digitará um número inteiro para facilitar
+# a checagem de paridade.
+
+num = int(input('Digite um número inteiro: '))
+
+# 1 Positivo ou Negativo
+if num > 0:
+    print(f"O número {num} é Positivo!")
+elif num < 0:
+    print(f"O número {num} é Negativo!")
+else:
+    print(f"O número {num} é Zero!")
+
+# 2 Par ou Ímpar
+if num % 2 == 0:
+    print(f"O número {num} é Par!")
+else:
+    print(f"O número {num} é Ímpar!")
+
+    # 3 Múltiplos de 3, 5 ou 7 ( Somente se for Ímpar)
+
+    # Variável de controle
+    multiplo_encontrado = False
+
+    if num % 3 == 0:
+        print(" É múltiplo de 3.")
+        multiplo_encontrado = True
+
+    if num % 5 == 0:
+        print(" É múltiplo de 5.")
+        multiplo_encontrado = True
+
+    if num % 7 == 0:
+        print(" É múltiplo de 7.")
+        multiplo_encontrado = True
+
+    if not multiplo_encontrado:
+        print(" NÃO é múltiplo de 3, 5 ou 7.")
+
+
+#######################################
+
+''' 3. Crie um programa que peça a idade do usuário e informe a situação do voto.
+print'''
+
+
+# Assumindo que o usuário digitou um númeto inteiro
+idade = int(input('Digite sua idade: '))
+
+# A. Não pode votar
+if idade < 16:
+    print('Você não pode votar ainda.')
+# B. Voto Opicional ( 16 e 17 anos)
+elif idade >= 16 and idade <=17:
+    print('O seu voto é opcional.')
+# C. Voto obrigatório ( 16 a 65 anos)
+elif idade >= 18 and idade <= 70:
+    print('O seu voto é obrigatório')
+# D. Voto Opcional ( mais de 65 anos)
+else:
+    print('O seu voto é opcional')
+
+
+############################################################
+
+
+''' 4. Crie uma calculadora. Seu programa deve ter 3 inputs. O primeiro pegará um número float, o segundo irá pegar a operação aritmética a ser realizada (adição, subtração, multiplicação, divisão e potência) e o terceiro input deve pegar o segundo número em formato float. Mostre o resultado da operação em um texto completo, como abaixo:
+a. A equação é : 2 ** 6 = 64
+b. Onde o primeiro input foi 2, o segundo input foi ** e o terceiro foi 6.
+c. Avise o usuário caso a operação inserida seja inválida.
+d. Se a operação for de divisão e o segundo número for 0, avise “Impossível dividir por zero”.
+'''
+
+# 1. Primeiro número 
+num1 = float(input('Digite o primeiro número: '))
+
+# 2. Operação
+operacao = input('Digite a operação (+, -, *, /, **): ')
+
+# 3. Segundo  número
+num2 = float(input('Digite o segundo número: '))
+
+resultado = None
+operacao_valida = True
+
+# Lógica da Calculadora
+if operacao == '+':
+    resultado = num1 + num2
+
+elif operacao == '-':
+    resultado = num1 - num2
+elif operacao == '*':
+    resultado = num1 * num2
+elif operacao == '/':
+    # d. Tratar divisão por zero
+    if num2 == 0:
+        print('\nAVISO: Impossível dividir por zero')
+        operacao_valida = False # Marcar como inválida para não mostrar a equação
+    else:
+        resultado = num1 / num2
+elif operacao == '**':
+    resultado = num1 ** num2
+# c. Tratar operação inválida
+else:
+    print('\nAVISO: Operação inserida é inválida.')
+    operacao_valida = False
+
+# Mostrar o resultado
+if operacao_valida:
+    # a. e b. Mostrar o resultado no formato completo
+    print(f'\nA equação é {num1} {operacao} {num2} = {resultado}')
+    print(f'Onde o primeiro input foi {num1}, o segundo input foi {operacao} e o terceiro input foi {num2}.')
+
+
+
+
+
+
+
+
+
+
+
+
+
