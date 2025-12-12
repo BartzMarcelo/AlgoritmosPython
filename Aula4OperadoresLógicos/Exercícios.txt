@@ -166,7 +166,56 @@ if operacao_valida:
     print(f'\nA equação é {num1} {operacao} {num2} = {resultado}')
     print(f'Onde o primeiro input foi {num1}, o segundo input foi {operacao} e o terceiro input foi {num2}.')
 
+######################################################################################
 
+''' 5. Crie um algoritmo para determinar para onde alguém deve ir com base na sua idade. Abaixo está o critério que determina para onde ir:
+	a. se idade for menor que 3 -> vá para o Berçário
+	b. se idade for de 3 até 5 -> vá para a Educação Infantil na Série NX
+		i. a variação das séries (o X) vai do N1 até o N3
+	c. se idade for de 6 até 14 -> vá para o Ensino Fundamental no Ano X
+		i. a variação dos anos (o X) vai do 1º até o 9º
+	d. se idade for de 15 até 17 -> vá para o Ensino Médio no Ano X
+		i. a variação dos anos (o X) vai do 1º até o 3º
+	e. se idade for maior que 17 -> vá para a faculdade
+	f. Exemplo: se o usuário digitar 13, a saída deverá ser “Vá para o Ensino Fundamental no Ano 8”
+'''
+
+# Assumimos que o usuário digita um número inteiro
+idade = int(input('Digite a idade para determinar o destino: '))
+destino = ""
+
+# a. Berçário
+if idade < 3:
+    destino = "Berçário"
+
+#  b. Educação Infantil ( 3 a 5 anos)
+elif idade >= 3 and idade <= 5:
+    # Série X = idade -2 ( N1. N2. N3)
+    serie_x = idade - 2
+    destino = f"Educação Infantil na Série {serie_x}"
+
+
+# c. Ensino Fundamental ( 6 a 14 anos)
+elif idade >= 6 and idade <= 14:
+    # Ano X = idade - 5 (1º até 9ª)
+    ano_x = idade -5
+    destino = f"Ensino Fundamental no Ano {ano_x}º"
+
+
+# d. Ensino Médio ( 15 a 17 anos)
+elif idade >= 15 and idade <= 17:
+    # Ano X = idade - 14 ( 1º até 3º)
+    ano_x = idade - 14
+    destino = f"Ensino Médio no Ano {ano_x}º"
+
+
+# e. Faculdade ( maior que 17 anos)
+else:
+    destino = "Faculdade"
+
+
+# Exibir o resultado final
+print(f"Sua idade é de {idade}, assim você irá para: {destino}.")
 
 
 
