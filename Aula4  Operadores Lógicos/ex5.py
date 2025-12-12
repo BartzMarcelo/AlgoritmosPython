@@ -37,5 +37,7 @@ elif idade >=15 and idade <= 17:
         print('Vá para o Ensino Médio - 3º Ano')
 else:
     print('Vá para faculdade')
+
+    print('Fim do programa')                                                                    
     
 
