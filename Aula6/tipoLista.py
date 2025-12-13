@@ -30,3 +30,4 @@ print('Quarto planeta :', planetas[3])
 #Atribuir um novo valor a um indice especifico
 planetas[1] = "Júpiter"
 print('Lista de planetas atualizada :', planetas)
+print('planeta no indice 10: ', planetas[10])  # Isso causará um erro IndexError
