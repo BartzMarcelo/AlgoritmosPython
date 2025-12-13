@@ -30,4 +30,18 @@ print('Quarto planeta :', planetas[3])
 #Atribuir um novo valor a um indice especifico
 planetas[1] = "Júpiter"
 print('Lista de planetas atualizada :', planetas)
-print('planeta no indice 10: ', planetas[10])  # Isso causará um erro IndexError
+# print('planeta no indice 10: ', planetas[10])  # Isso causará um erro IndexError
+
+# mostra cada item da lista do fim para o começo
+print('Último planeta :', planetas[-1])
+print('Penúltimo planeta :', planetas[-2])
+print('Antepenúltimo planeta :', planetas[-3])      
+print('Anteantepenúltimo planeta :', planetas[-4])
+
+# mostra  intervalos de uma lista
+# para isso usamos o operador :
+#pegando todos os elementos a partir do segundo
+print(planetas[1])
+# pegando todos os elementos até o terceiro (não inclui o índice 3)
+print(planetas[:2])
+print(planetas[1:3])
