@@ -40,6 +40,7 @@ python -m streamlit run "C:\Users\Bartz\Desktop\TecIA\AlgoritmosPython\Aula4Oper
 
 python -m streamlit run "C:\Users\Bartz\Desktop\TecIA\AlgoritmosPython\Aula4OperadoresLógicos\Calculadora.py"
 
+ python -m streamlit run "C:\Users\LUISMARCELOBARTZDEAV\Desktop\AlgoritmosPython\AlgoritmosPython\AlgoritmosPython\Aula4OperadoresLógicos\app.py"
 
 
 
