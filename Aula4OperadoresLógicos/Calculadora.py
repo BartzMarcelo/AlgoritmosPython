@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Título do Aplicativo
-st.title("Calculadora Simples")
+st.title("Calculadora Si")
 
 # 1. Inputs para os números
 # Usamos st.number_input para obter números interativamente.
