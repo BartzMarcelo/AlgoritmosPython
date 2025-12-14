@@ -13,7 +13,8 @@ for i in range(NUMERO_DE_ALUNOS):
             nota = float(input(f"Digite a nota do Aluno {i+1} (0 a 10): "))
             
             # Validação simples para garantir que a nota está no intervalo correto
-            if 0 <= nota <= 10:
+            # if 0<= nota <= 10:
+            if nota >= 0 and nota <= 10:
                 # Adiciona a nota válida à lista (vetor)
                 notas_alunos.append(nota)
                 break  # Sai do loop 'while' e passa para o próximo aluno

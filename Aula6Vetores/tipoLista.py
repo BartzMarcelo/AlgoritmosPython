@@ -40,8 +40,8 @@ print('Anteantepenúltimo planeta :', planetas[-4])
 
 # mostra  intervalos de uma lista
 # para isso usamos o operador :
-#pegando todos os elementos a partir do segundo
-print(planetas[1])
+# pegando todos os elementos a partir do segundo
+print('Planeta na posição 1 :',planetas[1])
 # pegando todos os elementos até o terceiro (não inclui o índice 3)
 print(planetas[:2])
 print(planetas[1:3])
