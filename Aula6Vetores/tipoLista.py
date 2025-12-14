@@ -45,4 +45,4 @@ print(planetas[1])
 # pegando todos os elementos até o terceiro (não inclui o índice 3)
 print(planetas[:2])
 print(planetas[1:3])
-print(planetas[1:3])
+
