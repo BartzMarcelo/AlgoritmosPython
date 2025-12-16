@@ -102,3 +102,21 @@ print('')
 juncao = '-'.join(planetas)
 print(juncao)
 print('')
+numeros = [1, 2, 3, 4, 5, 6]
+print(numeros)
+# Convertendo cada número para string
+numeros = ['1', '2', '3', '4', '5', '6'] # Obs.: Se tentarmos passar uma String dará TypeError
+num = ','.join(numeros)
+print(num)
+print('')
+print(planetas)
+#Comando in, quando queremos saber como determinado valor está em uma lista.
+print('Terra' in planetas)
+print('')
+# Se o planeta não estiver na lista, insere ele, insere ele #  o Contrl + D seleciona a palavra onde o cursor está posicionado, se for apertando, vai selecionando as palavras subsequentes.
+if 'Júpiter' not in planetas:
+    planetas.append('Júpiter')
+    print(planetas)
+else:
+    print('Júpiter já está na lista')
+print(planetas)
