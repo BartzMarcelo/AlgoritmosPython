@@ -47,4 +47,37 @@ print(planetas[:2])
 print(planetas[1:3])
 print(planetas)
 
+print("")
+print(planetas)
+# Adicina novo elemento ao final da lista.
+planetas.append('Vênus')
+print(planetas)
+# Remover último elemento da lista.
+removido =planetas.pop()
+print('')
+print('Removido: ', removido)
+print(planetas)
+# Removendo um item específico.
+segundo = planetas.pop(1)
+print('')
+print('Removido: ', segundo)
+print(planetas)
+print('')
+planetas.append("Vênus")
+print('')
+print(planetas)
+print('')
+# Ordenar a lista.
+print(planetas)
+print('')
+planetas.sort(reverse=True)
+print(planetas)
+print('')
+planetas.sort
+print(planetas)
+print('')
+planetas.reverse()
+print(planetas)
+print('')
+
 
