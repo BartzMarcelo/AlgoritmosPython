@@ -79,5 +79,26 @@ print('')
 planetas.reverse()
 print(planetas)
 print('')
+# len retorna o tamanho da lista
+print(len(planetas))
+print('')
 
-
+nome = 'Gandalf, o Cinzento., rabugento'
+print((nome[5:]))
+print(nome[:6])
+print(nome[0])
+parte = nome[3:8]
+print(parte)
+# nome[0] = 'F'  # -> É string e não objeto, portanto, não suporta.
+print('')
+# split divide uma lista
+print(nome.split())
+print('')
+print(planetas) 
+# join - Cria strings a partir de uma lista.
+unir= ''.join(planetas)
+print(unir)
+print('')
+juncao = '-'.join(planetas)
+print(juncao)
+print('')
