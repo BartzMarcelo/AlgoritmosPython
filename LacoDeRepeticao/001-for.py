@@ -35,4 +35,32 @@ print(numeros)
 lista_num = list(numeros)
 print(type(lista_num))
 print(lista_num)
+print('-----------------------')
+for num in range(1,6):
+    print('num =', num) 
+print('-----------------------')
+# Estrutura de repetição
+for num in range(10):
+    #Estrutura condicional
+    if num % 2 == 0:
+        print(f'O número {num} é par.')
+    else:
+        print(f'O número {num} é impar.')
+print('-------')
+# R E V I S Ã O
+# print('-------')
+# Tipo de dados
+# int
+# float
+# listas (append, pop, sort, reverse, split, join, list)
+# print('-----------------------')
+# ESTRURA Condicional
 
+# # if -. simples
+# # if ... else -. composta
+# # if ... elif ... else -. encadeada
+# if if -> aninhado
+
+
+# Estrutura de Repetição(FOR)
+# range(inicio, fim, passo)
