@@ -53,3 +53,23 @@ Para entender os comandos abaixo, é importante lembrar que o Git trabalha em tr
 ---
 
 > **Nota:** Mantenha seu arquivo `.env` fora do Git para sua segurança.
+
+# Procedimentos de Clonagem e Gestão de Repositórios
+
+Este guia detalha como baixar projetos do GitHub para a sua máquina local e como organizar os comandos por categorias.
+
+---
+
+## 1. Como Clonar para a Área de Trabalho
+
+Para clonar um repositório diretamente para o seu Desktop, siga a sequência de comandos abaixo no PowerShell:
+
+### **Passo a Passo**
+1. **Navegar para o Desktop:**
+   ```powershell
+   cd ~/Desktop
+
+   git clone [https://github.com/usuario/nome-do-projeto.git](https://github.com/usuario/nome-do-projeto.git)
+
+   cd nome-do-projeto
+    code .
