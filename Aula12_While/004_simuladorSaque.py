@@ -1,10 +1,9 @@
-saldo = 500
-
+saldo = 500  
 condicao = '1'
 
 while condicao != '0':
     print(f'Saldo é de R$ {saldo:.2f}.')
-    sacar = float(input('Quanto deseja sacar?'))
+    sacar = float(input('Quanto deseja sacar? 380'))
     print(f'O valor a sacar é de {sacar:.2f}.')
     if sacar >= saldo:
         print('Saldo insuficiente.')      
@@ -13,4 +12,5 @@ while condicao != '0':
         print(f'Seu saldo atual é {saldo:.2f}') 
            
     condicao = input('Deseja a continuar a sacar? ')
+    print()
 print('Obrigado por usar nosso banco.')
