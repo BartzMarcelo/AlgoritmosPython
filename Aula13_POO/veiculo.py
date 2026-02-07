@@ -1,11 +1,19 @@
 class Carro:
 
-    # Atributos
+    ''' Atributos de Classe'''
+
+
+    qtd_rodas: int = 4
+    total_carros: int=0
+
+
     def __init__(self, modelo: str, cor : str, ano: int)-> None:
         self.modelo: str = modelo
         self.cor: str = cor
         self.ano: int = ano
         self.pisca: bool = False
+        Carro.total_carros +=1
+        
 
     # Métodos
     def buzina(self):
