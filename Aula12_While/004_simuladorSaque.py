@@ -3,7 +3,7 @@ condicao = '1'
 
 while condicao != '0':
     print(f'Saldo é de R$ {saldo:.2f}.')
-    sacar = float(input('Quanto deseja sacar? 380'))
+    sacar = float(input('Quanto deseja sacar? '))
     print(f'O valor a sacar é de {sacar:.2f}.')
     if sacar >= saldo:
         print('Saldo insuficiente.')      
