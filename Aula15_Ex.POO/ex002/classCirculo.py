@@ -1,6 +1,6 @@
 class Circulo:
 
-    pi = 3.14159
+    PI= float(3.14159)
 
     # area = pi r²
 
@@ -11,7 +11,7 @@ class Circulo:
 
     def calcular_area(self)-> float:
         # Fórmula: Área = π * raio²
-        area = Circulo.pi * (self.raio ** 2)
+        area = Circulo.PI * (self.raio ** 2)
         return area       
         
     def __str__(self)-> str:
