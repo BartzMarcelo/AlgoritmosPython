@@ -1,6 +1,6 @@
 class ContaBancaria:
     # Atributo de classe: compartilhado por todas as contas
-    taxa_juros = 0.05  # 5% ao ano-+
+    taxa_juros = 0.10 
 
     def __init__(self, titular: str, saldo: float)->None:
         self.titular = titular
@@ -19,4 +19,4 @@ class ContaBancaria:
 
     def __str__(self) -> str:
         """Define como o objeto será exibido ao usar print()."""
-        return f"Conta(Titular: {self.titular}, Saldo: R${self.saldo:.2f})"
+        
