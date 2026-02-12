@@ -1,0 +1,11 @@
+from classeContaBancaria import ContaBancaria
+
+
+if __name__ == '__main__':
+
+    # Criando o objeto e instanciando a classe.
+    cb1 = ContaBancaria(' João', 1200.00)
+    cb2 = ContaBancaria(' Maria', 300.00)
+    
+    print(cb1)
+    print(cb2)
