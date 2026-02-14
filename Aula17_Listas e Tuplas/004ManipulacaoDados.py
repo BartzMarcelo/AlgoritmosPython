@@ -119,6 +119,18 @@ def demonstrar_slicing():
     print(f'\nmanha(06-12: {manha}')
       print(f' Média : {sum(madrugada)/len(madrugada):.1f}°C')
     print*(f'\n Últimas 3h: {ultimas_3h}')
+    # Slincing com passo: dados de 2 em 2 hora
+
+    amostras_intervalo = temperaturas[::2]
+    print(amostras_intervalo)
+
+    # reversao para analise retroativa
+    tendencia = temperaturas[::-1]
+    print (tendencia)
+
+                                    
+
+
 
 
 
