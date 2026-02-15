@@ -1,5 +1,5 @@
 """Fazer os imports, se necessário."""
-from Aula14_POO.String_Carro.carro import Carro
+from carro import Carro
 
 
 if __name__ == '__main__':
