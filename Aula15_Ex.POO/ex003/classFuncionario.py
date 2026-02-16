@@ -17,9 +17,9 @@ class Funcionario:
         # else:
         #     print(f'O salário de {self.nome} é menor que o salário minímo ')
         
-                return f"O salário de {self.nome} (R$ {self.salario:.2f}) é maior ou igual ao salário mínimo."
+            return f"O salário de {self.nome} (R$ {self.salario:.2f}) é maior ou igual ao salário mínimo."
         else:
-             return f"O salário de {self.nome} (R$ {self.salario:.2f}) é menor que o salário mínimo."
+            return f"O salário de {self.nome} (R$ {self.salario:.2f}) é menor que o salário mínimo."
 
 
     
