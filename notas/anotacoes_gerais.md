@@ -12,3 +12,8 @@ Apresentação
 
 24/06
 25/06
+
+Reconhecimento de arquitetura
+Algoritmos
+Estatística
+Banco de Dados
