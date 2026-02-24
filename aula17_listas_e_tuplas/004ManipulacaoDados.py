@@ -257,15 +257,106 @@ def demonstrar_slicing():
 
 # Seção 3 - Tuplas e Imutabilidade
 def demonstrar_tuplas():
+    """Demontra Tuplas em Contexto de IA"""
     print('\n=== TUPLAS E IMUTABILIDADE ===')
+
+    #Aplicação 1: Coordenadas em processamento de imagem
+
+    print("--- Coordenadas de Bounding Box ---")
+    # Formato: (x_min, y_min, x_max, y_max) - Padrão em visão computacional
+    bbox_rosto = (100, 150, 200, 200)
+    print(f"Boundin box: {bbox_rosto}.")
+    print(f"Coordenadas: x_min={bbox_rosto[0]}, y_min= {bbox_rosto[1]}")
+
+    # Desampacotamento(tuple unpacking)
+    x_min, y_min, x_max, y_max = bbox_rosto
+    largura = x_max - x_min # Calcula a adimensão horizontal
+    altura = y_max - y_min # Calcula a dimensão vertical
+    area= largura * altura
+    print(f"Dimensões: {largura} * {altura} Área: {area} pixel]")
+
+    # Aplicação 2: Configurações do modelo
+    print(f"\n--- Configuração de Hiperparâmetros ---")
+    config_redes_neurais = {
+        "resnet50": (224, 224, 3), # altura, largura, canais
+        "vgg16": (224, 224, 3),
+        "inception": (299, 299, 3)
+    }
+
+    for modelo, dimensoes in config_redes_neurais.items():
+        altura, largura, canais = dimensoes
+        print(f"{modelo}: {altura} x { largura} x {canais}  (total: {altura * largura*canais} pixels)")
+
+        print()
+
+    # Aplicação 3: retorno múltiplo de funções
+    print(f"\n--- Retorno Múltiplo de Funções ---")
+
+    def calcular_metricas(y_true, Y_pred):
+        """
+        Calcula métricas de classificação
+        Retorna tupla: ( acurácia, precisão e recall)
+
+        """
+
+        # Simulação de cálculo 
+        acuracia = 0.9
+        precisao = 0.89
+        recall = 0.95
+        return acuracia, precisao, recall
+    # Desempacotamento no retorno
+    acc, prec, rec = calcular_metricas([], [])
+    print( "Métricas - Acc: {acc}, prec: {prec}, Rec: {rec}")
+
+    # Aplicação 4: Imutabilidade com segurança
+    print(f"\n--- Segurança dos Dados ---")
+
+    coordenadas_gps = (-23.5505, -46.6333) # São Paulo
+    print(f"Coordendas GPS: {coordenadas_gps}")
+    #coordenadas_gps[0] = 10 # Erro! TypeError; 'tuple' object does not support item assigment
+    # Tupla é imutável!
+    print(" A Tupla protege contra modificação acidental.")
+
+
+    
+
+
+
+
+
+       
+        
+
+
+
+
+
+    print()
     coordenada = (-23.5505, -46.6333) # Exemplo: São Paulo
     print(f'Coordenada fixa: {coordenada}')
+    print(f"Tipo: {type(bbox_rosto)}.")
+    print()
     # Tuplas não aceitam atribuição: coordenada[0] = 0 geraria erro
 
 
 # Seção 4 - Compreensão de listas
 def demonstrar_compreensoes():
-    print('\n=== COMPREENSÃO DE LISTAS ===')
+    """
+    Demonstra list comprehensios para processamento eficiente
+
+    """
+    print("\n=== Compreensão de Listas\n")
+
+    # Dataset bruto com valores faltantes(None)
+
+    dados_brutos = [ 23.5, None, 45.2, None, 12.8, 56.0, None, 34.5]
+    print(f"Dados brutos: {dados_brutos}")
+
+
+
+  
+
+    
     numeros = [1, 2, 3, 4, 5]
     quadrados = [x**2 for x in numeros]
     print(f'Números: {numeros}')
