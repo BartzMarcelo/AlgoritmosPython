@@ -1,5 +1,6 @@
-- Antes de tudo, criar ambiente virtual de desenvolvimento do Python
-- Frontend: Djangp PWA e responsivo
-- Banco de dados: local
-- Backend: Python
+- Antes de tudo, criar ambiente virtual de desenvolvimento do Python.
+- Frontend: Djangp PWA e responsivo.
+- Banco de dados: local.
+- Backend: Python.
+- Usar ngrok para testar o pwa.
 
