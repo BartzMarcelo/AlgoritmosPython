@@ -315,21 +315,7 @@ def demonstrar_tuplas():
     print(f"Coordendas GPS: {coordenadas_gps}")
     #coordenadas_gps[0] = 10 # Erro! TypeError; 'tuple' object does not support item assigment
     # Tupla é imutável!
-    print(" A Tupla protege contra modificação acidental.")
-
-
-    
-
-
-
-
-
-       
-        
-
-
-
-
+    print(" A Tupla protege contra modificação acidental.")    
 
     print()
     coordenada = (-23.5505, -46.6333) # Exemplo: São Paulo
@@ -378,13 +364,7 @@ def demonstrar_compreensoes():
     distancias = [ [((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)**0.5 for p2 in pontos] for p1 in pontos]
     print(" Matriz de Distancias")
     for linha in distancias:
-        print(f"{[round(d,2) for d in linha]}")
-
-
-
-  
-
-    
+        print(f"{[round(d,2) for d in linha]}")     
 
 
 # Execução - Main
