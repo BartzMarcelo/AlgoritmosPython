@@ -345,22 +345,46 @@ def demonstrar_compreensoes():
     Demonstra list comprehensios para processamento eficiente
 
     """
-    print("\n=== Compreensão de Listas\n")
+    print("\n=== Compreensão de Listas ===\n")
 
     # Dataset bruto com valores faltantes(None)
 
     dados_brutos = [ 23.5, None, 45.2, None, 12.8, 56.0, None, 34.5]
     print(f"Dados brutos: {dados_brutos}")
 
+    # Filtragem de valores válidos( data cleaning )
+    # Sintaxe: [expressão for item  in lista if condição]  
+    dados_limpos = [ x for x in dados_brutos if x is not None]
+    print(f"Dados limpos : {dados_limpos}")
+    print(f"Removidos: {len(dados_brutos) - len(dados_limpos)} ")
+
+
+    # Normalização ( escala 0-1)
+    min_val = min(dados_limpos)
+    max_val = max(dados_limpos)
+    normalizados =[ (x-min_val) / (max_val - min_val) for x in dados_limpos]
+    print(f"\nNormalizados [0,1]: {[round(x, 3) for x in normalizados]}")
+
+    # Categorização com condicional
+    categorias =[f"alto" if x > 40 else "médio" if x > 25 else "baixo" for x in dados_limpos]
+    print(f"\nCategorias: {categorias}")
+
+    # Compreensão aninhada; matriz de confusão simulada
+    print(f"\n --- Matriz de Distâncias ---")
+    pontos = [ (0,0), (1,1), (2,2)]
+
+    # calcular a distância Euclidiana entre todos os pares
+ 
+    distancias = [ [((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)**0.5 for p2 in pontos] for p1 in pontos]
+    print(" Matriz de Distancias")
+    for linha in distancias:
+        print(f"{[round(d,2) for d in linha]}")
+
 
 
   
 
     
-    numeros = [1, 2, 3, 4, 5]
-    quadrados = [x**2 for x in numeros]
-    print(f'Números: {numeros}')
-    print(f'Quadrados: {quadrados}')
 
 
 # Execução - Main
