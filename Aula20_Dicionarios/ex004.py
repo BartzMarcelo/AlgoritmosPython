@@ -11,6 +11,7 @@ experimentos = {
 
 # Escreva um código que percorra esse dicionário e identifique qual o nome do modelo que possui a maior acurácia.
 
+
 maior_acuracia_modelo = None
 maior_acuracia = 0
 
@@ -21,6 +22,21 @@ for modelo, metricas in experimentos.items():
         maior_acuracia_modelo = modelo
 print()
 print(f' A maior acurácia está no { maior_acuracia_modelo}')
+print()
+
+
+print(f'\n Versão do professor Roberto\n')  
+
+#1) Inicialização de dados:
+melhor_modelo = ""# armazena
+maior_acuracia = 0 # guardar o maior valor
+#2) Loop - percorrer o dicionário
+for modelo, metricas in experimentos.items():
+    if metricas["acuracia"] > maior_acuracia:
+        maior_acuracia = metricas["acuracia"]
+        melhor_modelo = modelo
+print()
+print(f' A maior acurácia está no { melhor_modelo}, sendo o valor da acuracia {maior_acuracia}')
 print()
 
 
@@ -38,7 +54,8 @@ novas_metricas = {
 experimentos["Modelo_D"] = novas_metricas
 print()
 print(f"Modelo_D: {experimentos['Modelo_D']}" ) 
-print()   
+print()  
+
 
 print(f"Experiementos atualizado: {experimentos}")
 print()
@@ -51,8 +68,11 @@ for modelo, metricas in experimentos.items():
         maior_acuracia = metricas["acuracia"]
         maior_acuracia_modelo = modelo
 print()
-print(f' A maior acurácia está no { maior_acuracia_modelo}')
+print(f'A maior acurácia está no { maior_acuracia_modelo}')
 print()
+
+print("Listando chaves com lista\n")
+print(f"Modelos registrados: {list(experimentos.keys())}")
 
 
 
