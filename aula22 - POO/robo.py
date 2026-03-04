@@ -25,7 +25,7 @@ class RoboIndustrial:
         """
         if not self._esta_ligado:
             self._esta_ligado = True
-            print(f"[{self.nome}] Sistema Iniciado: bateria {self._bateria} %")
+            print(f"[{self.nome}] Sistema Iniciado: Bateria {self._bateria} % .")
         else:
             print(f"[{self.nome}] Já esta ligado.")
         return self
@@ -53,9 +53,17 @@ class RoboIndustrial:
         # Atualiza estado interno
         self.posicao_x = novo_x
         self.posicao_y = novo_y
-        self_bateria -= distancia * 0.1
-        print(f"[{self.nome}] Movido para ({novo_x}, {novo_y})." f"Distância:{distancia:.1f}m| bateria: {self._bateria:.1f}%") 
+        self._bateria -= distancia * 0.1
+        print(f"[{self.nome}] Movido para ({novo_x}, {novo_y})." f"Distância:{distancia:.1f}m | Bateria: {self._bateria:.1f}% .") 
         return self
 
+    # Fim do método mover_para
+
+    def status(self):
+        """ Retorna reprsentação textual do estado atual."""
+        estado = "Ligado" if self._esta_ligado else " Desligado"
+        return(f"[{self.nome}] Pos:({self.posicao_x}, {self.posicao_y})| " f"{self._bateria:.0f}% | {estado}")
+    # Fim do método status
     
-        
+# Fim da classe RoboIndustrial
+
