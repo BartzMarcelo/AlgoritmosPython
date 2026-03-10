@@ -17,7 +17,7 @@ class LoggerSimples:
     def to_dict(self) -> Dict[str, Any]:
         return{"tipo": "logger", "nível": " INFO"}
     
-    def processar_serializavel(obj: Serializavel):
-        """ Aceita QUALQUER objeto que satisfaça o protocolo."""
-        obj.salvar("temp.txt")
-        print(obj.to_dict())
+# def processar_serializavel(obj: Serializavel):
+#     """ Aceita QUALQUER objeto que satisfaça o protocolo."""
+#     obj.salvar("temp.txt")
+#     print(obj.to_dict())

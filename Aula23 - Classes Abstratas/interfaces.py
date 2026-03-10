@@ -7,9 +7,9 @@ Arquivo que define as "regras" que os outros devem seguir.
 from abc import ABC, abstractmethod, abstractproperty
 
 # Tipagem estática para aumentar a segurança do código.
-from typing import List, Dict, Any, Optional, Protocol
+from typing import List, Dict, Any, Optional
 
-import json
+
 import pickle
 
 # Definindo a base para classes abastratas (ABC).
@@ -48,7 +48,7 @@ class ModeloTreinavel(ABC):
             with open(caminho, 'wb') as f:
                 pickle.dump(self, f)
                 return True               
-        except Exception as e:
+        except Exception:# as e:
             print(f"Erro ao salvar: {e}")
             return False
         
@@ -69,7 +69,7 @@ class Exportavel(ABC):
         """ Exporta para formato ONNX(Open Neural Networking Exchange)"""
         pass
 
-    def exporta_json(self )-> Dict[str, Any]:
+    def exportar_json(self )-> Dict[str, Any]:
         """ Exporta representação JSON (JavaScript Object Notetion)do modelo"""
         pass
 
