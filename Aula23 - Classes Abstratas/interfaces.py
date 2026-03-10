@@ -37,7 +37,7 @@ class ModeloTreinavel(ABC):
         pass
 
     @abstractmethod
-    def esta_treinando(self)-> bool:
+    def esta_treinado(self)-> bool:
         """Propriedade oara verificar o status do Modelo."""
         pass
 
