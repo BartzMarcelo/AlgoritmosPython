@@ -13,38 +13,42 @@ def main():
     print("DEMONSTRAÇÃO DE PADRÕES E INTERFACES")
     print("="*40)
 
-    # 1. Uso Polimórfico - Demonstração do polimorfismo
+    # 1. Uso Polimórfico
     modelos = [ 
         RegressaoLinear("Linear-v1"),
         RedeNeuralProfunda("Neural-v1"),
         ModeloMedia("Media-v1") 
     ]
 
+    print("\n--- Processando Modelos ---")
     for m in modelos:
-        # Executa o treino (mostrará a mensagem no terminal)
+        # Treinamento
         m.treinar([1, 2], [1])
         
-        # --- AJUSTE AQUI: Para mostrar o retorno do prever e a propriedade ---
-        previsao = m.prever([10, 20]) # Simula uma entrada para receber o retorno
+        # Previsão (Captura o retorno da lista [42.0, 42.0])
+        previsoes = m.prever([10, 20])
+        
+        # Exibição Única de Resultados
         print(f"Modelo: {m.nome}")
-        print(f"Previsão Fixa: {previsao}")     # Mostrará a lista de 42.0
-        print(f"Está Treinado: {m.esta_treinado}") # Mostrará True
-        # ---------------------------------------------------------------------
-
+        print(f"Previsão Fixa: {previsoes}")
+        print(f"Status Treinado: {m.esta_treinado}") # <-- Aparece apenas 1x aqui
+        
+        # Verificação de Interface
         if isinstance(m, Exportavel):
-            print(f"{m.nome} pode ser exportado para JSON: {m.exportar_json()}")
-        print("-" * 30)
+            print(f"Exportação JSON: {m.exportar_json()}")
+            
+        print("-" * 35)
 
     # 2. Protocolo
     print("\n--- Testando Protocolo ---")
     logger = LoggerSimples()
     processar_serializavel(logger)
 
-    # 3. Abstract Factory
+    # 3. Fábricas (Abstract Factory)
     print("\n--- Testando Fábricas ---")
-    minha_fabrica = FabricaSklearn() 
-    novo_modelo = minha_fabrica.criar_classificador()
-    print(f"Modelo criado pela fábrica: {novo_modelo.nome}")
+    fabrica = FabricaSklearn() 
+    novo_modelo = fabrica.criar_classificador()
+    print(f"Modelo criado via Fábrica: {novo_modelo.nome}")
 
 if __name__ == "__main__":
     main()
