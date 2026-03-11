@@ -1,0 +1,26 @@
+Enunciado: O Criador de Modelos Estatísticos
+Contexto:
+Você recebeu um framework de Inteligência Artificial já estruturado. Sua tarefa é expandir esse sistema criando um novo modelo de previsão muito simples, chamado ModeloMedia.
+
+Tarefa:
+
+No arquivo modelos.py, crie a classe ModeloMedia que herda de ModeloTreinavel.
+
+Regra de Negócio:
+
+No método treinar, ele deve apenas imprimir que está calculando a média.
+
+No método prever, ele deve retornar uma lista onde todos os valores são o número 42.0 (apenas para simular uma previsão fixa).
+
+A propriedade esta_treinado deve retornar True.
+
+No arquivo main.py, adicione uma instância do seu ModeloMedia à lista de modelos e execute o programa.
+
+
+O que será avaliado:
+
+Se a classe foi capaz de rodar sem causar um TypeError.
+
+O entendimento de que o novo modelo pode ser tratado exatamente como uma "Rede Neural Profunda" dentro de um loop.
+
+
