@@ -23,3 +23,4 @@ projeto_analise_ia/
     ├── raw/                # Dados brutos
     └── processed/          # Dados após o pipeline
 
+1 - interfaces
