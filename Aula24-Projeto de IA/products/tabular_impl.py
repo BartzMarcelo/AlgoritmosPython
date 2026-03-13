@@ -30,8 +30,10 @@ class TabularCleaner(DataCleaner):
         return df_clean
     
 class TabularPreprocessor(DataPreprocessor):
-    def process(sel, df: pd.DataFrame, target: str, num_cols: list, cat_cols: list)
+    def process(sel, df: pd.DataFrame, target: str, num_cols: list, cat_cols: list):
         df_mod = df.copy()
         le_dict = {}
         for col in cat_cols:
             le = LabelEnconder 
+            df_mod[col] =le.fit_tranform(df_mod[col].astype(str))
+            le_dict[col]= le
