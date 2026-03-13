@@ -5,8 +5,7 @@ class DataReader(ABC):
     @abstractmethod # "Se alguém herdar de DataReader, é OBRIGATÓRIO escrever o cóigo do método read".
     def read(self, path: str, **kwargas) -> pd.DataFrame: pass
     
-class DataCleaner(ABC):
-
+class DataCleaner(ABC): 
     @abstractmethod
     def clean(self, df: pd.DataFrame, num_cols: list, cat_cols: list)-> pd.DataFrame:pass
 
