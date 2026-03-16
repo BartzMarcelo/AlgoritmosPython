@@ -1,0 +1,26 @@
+projeto_analise_ia/
+│
+├── main.py                 # Ponto de entrada (Client Code)
+├── requirements.txt        # Dependências (pandas, sklearn, etc.)
+│
+├── factory/                # Definição das fábricas e interfaces
+│   ├── __init__.py
+│   ├── base_factory.py     # Classe Abstrata (Abstract Factory)
+│   ├── standard_factory.py # Implementação Concreta (Standard ML)
+│   └── series_factory.py   # Outra Implementação (Ex: Séries Temporais)
+│
+├── products/               # Implementações dos componentes (Produtos)
+│   ├── __init__.py
+│   ├── interfaces.py       # Classes abstratas (DataReader, Cleaner, etc.)
+│   ├── tabular_impl.py     # Implementações para dados tabulares
+│   └── temporal_impl.py    # Implementações para dados temporais
+│
+├── core/                   # Lógica de negócio principal
+│   ├── __init__.py
+│   └── orchestrator.py     # Classe AnaliseDadosIA (usa a factory)
+│
+└── data/                   # Armazenamento de datasets
+    ├── raw/                # Dados brutos
+    └── processed/          # Dados após o pipeline
+
+1 - interfaces
