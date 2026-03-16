@@ -1,0 +1,99 @@
+Para chegarmos a esse resultado de "Sucesso" nos dois pipelines, seguimos um processo de **Engenharia Reversa e Refatoração**. O código que você tinha era conceitualmente correto, mas possuía "nós" estruturais e erros de sintaxe que impediam o Python de ler os arquivos.
+
+Aqui está o passo a passo técnico do que foi feito:
+
+---
+
+### 1. Alinhamento da Estrutura de Pastas
+
+O primeiro passo foi garantir que o Python entendesse onde cada peça do quebra-cabeça estava. Como você está usando uma estrutura modular, o comando `python main.py` na raiz é o que define o "ponto de partida".
+
+* **O que fizemos:** Ajustamos as importações para usar o caminho completo (ex: `from products.interfaces ...`). Isso evitou o erro de `ModuleNotFoundError`, pois agora o script sabe exatamente em qual pasta buscar cada componente.
+
+### 2. Quebra da Importação Circular (O "Nó" Crítico)
+
+Você enfrentou um erro onde a `base_factory.py` tentava importar a si mesma ou as interfaces tentavam importar as fábricas.
+
+* **A lógica aplicada:** Isolamos as **Interfaces**. Elas passaram a ser o arquivo mais "baixo" na hierarquia, não dependendo de ninguém. Assim, as Fábricas e as Implementações podem olhar para as Interfaces sem criar um loop infinito de carregamento.
+
+### 3. Correção da "Gramática" (Sintaxe Python)
+
+O código apresentava pequenos erros de digitação que travavam a execução assim que o Python chegava naquela linha:
+
+* **Digitação:** Corrigimos `colums` para `columns` e `munique()` para `unique()`.
+* **Tipagem:** No Python, para dizer que uma variável é uma lista, usamos `cat_cols: list`. No seu código estava `cat_cols, list`, o que fazia o Python achar que você estava esperando um novo argumento chamado "list", que nunca era enviado.
+
+### 4. Implementação do Polimorfismo (Abstract Factory)
+
+Este é o coração do projeto. O objetivo era que o mesmo código funcionasse para dois tipos de dados totalmente diferentes.
+
+* **Fábrica Tabular:** Configuramos para usar **Estratificação** (garantir que as classes estejam equilibradas no treino/teste) e tratamento de *outliers*.
+* **Fábrica Temporal:** Configuramos para **não embaralhar** os dados. Em séries temporais, a ordem importa (não podemos usar o preço de amanhã para prever o de hoje). Usamos o corte seco (`iloc[:split_idx]`) para respeitar a cronologia.
+
+### 5. Atualização para Práticas Modernas (Pandas)
+
+O erro no `TemporalCleaner` sobre o método `ffill` foi resolvido atualizando a forma como o Pandas lida com valores nulos.
+
+* **Antes:** `fillna(method='ffill')` (está sendo descontinuado).
+* **Depois:** `.ffill().bfill()`. Isso garante que, se houver um buraco no início da série temporal, o código consiga preenchê-lo voltando um passo, evitando que o modelo receba dados vazios.
+
+---
+
+### Resumo do Fluxo Final
+
+Agora, quando você roda o `main.py`, acontece o seguinte:
+
+1. O **Orquestrador** recebe uma fábrica (ex: `SeriesFactory`).
+2. Ele pede os "produtos" (Reader, Cleaner, Preprocessor) sem saber como eles funcionam por dentro.
+3. Cada produto executa sua lógica específica (um embaralha, o outro ordena).
+4. O resultado é entregue pronto para o modelo de IA.
+
+**O próximo passo ideal seria criar a pasta `data/raw` e colocar um arquivo CSV real lá para testarmos o carregamento fora do código. Quer que eu te ajude a criar um script que gera esse arquivo de teste?**
+
+Para rodar esse projeto com todas as funcionalidades que implementamos (manipulação de dados, pré-processamento e suporte aos diferentes formatos de arquivo), você precisa instalar as bibliotecas base do ecossistema de Ciência de Dados do Python.
+
+Aqui estão os comandos para o seu terminal:
+
+### 1. Comando de Instalação
+
+No seu terminal (PowerShell ou Bash), execute:
+
+```powershell
+pip install pandas numpy scikit-learn pyarrow
+
+```
+
+---
+
+### 2. Por que cada uma é necessária?
+
+* **`pandas`**: É o coração do projeto. Usado em todos os seus "Readers" e "Cleaners" para manipular os DataFrames.
+* **`numpy`**: Base matemática para o Pandas e usada no seu código para operações de arrays e verificação de valores únicos (`np.unique`).
+* **`scikit-learn`**: Fornece as ferramentas que usamos no `tabular_impl.py`:
+* `StandardScaler` (para normalizar os números).
+* `LabelEncoder` (para transformar texto em números).
+* `train_test_split` (para dividir os dados em treino e teste).
+
+
+* **`pyarrow`**: Necessário para que o Pandas consiga ler e escrever arquivos no formato **Parquet**, que você incluiu como suporte no seu `TabularReader`.
+
+---
+
+### 3. Criando o arquivo `requirements.txt`
+
+Como o seu projeto tem uma pasta para isso, é uma excelente prática deixar essas dependências registradas. Crie um arquivo chamado `requirements.txt` na raiz do projeto com o seguinte conteúdo:
+
+```text
+pandas
+numpy
+scikit-learn
+pyarrow
+
+```
+
+Assim, se outra pessoa (ou você mesmo em outro PC) for rodar o projeto, basta usar o comando:
+`pip install -r requirements.txt`
+
+### Próximo Passo
+
+Agora que o ambiente está pronto e o código está rodando, **você gostaria que eu ajudasse a criar um pequeno script para gerar um arquivo `.csv` de teste na sua pasta `data/raw/` para vermos o pipeline funcionando com dados reais?**
